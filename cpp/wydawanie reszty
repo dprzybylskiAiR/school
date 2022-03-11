@@ -1,0 +1,36 @@
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+int main()
+{
+    int x;
+    cout<<"Podaj ilosc nominalow:\n";
+    cin>>x;
+    int nominaly[x] = {};
+    cout<<"Wymien nominaly:\n";
+    for(int i=0; i<x; i++){
+        cin>>nominaly[i];
+    }
+    int tabsize = sizeof(nominaly)/sizeof(nominaly[0]);
+    sort(nominaly, nominaly+tabsize);
+    int kwota;
+    cout<<"Podaj kwote reszty\n";
+    cin>>kwota;
+    
+
+    while (kwota>0) {                             
+    int n=0;
+    for (int i=0; i<tabsize; i++){
+        if (nominaly[i]<=kwota && nominaly[i]>n) {
+            n = nominaly[i];
+        }
+    }
+    cout<<n<<", ";
+    kwota=kwota-n;
+}
+    
+    
+
+    return 0;
+}
