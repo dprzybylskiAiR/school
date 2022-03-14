@@ -38,6 +38,12 @@ $name="Janusz";
 echo substr($name, 0, 3)."<br>"; //Jan
 echo substr($name, 2, 2)."<br>"; //nu
 
-echo str_replace("Janusz","Krzychu",$name);
+echo str_replace("Janusz","Krzychu",$name)."<br>";
 
+$tab = ["ą", "ę"];
+$replace = ["a", "e"];
+echo str_replace($tab, $replace, "Bąk")."<br>";
+
+$mail="janusz_kowalski@zsl.poznan.pl";
+echo substr($mail, strpos($mail, '@')+1, strlen($mail))."<br>";
 ?>
